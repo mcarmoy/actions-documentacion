@@ -1,0 +1,14 @@
+name: Documentacion - accion Docker
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v7
+
+      - name: Comprobar documentacion
+        uses: ./.github/actions/comprobar-docker
